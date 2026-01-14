@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pypdf
+chromadb
+sentence-transformers
+rank-bm25
+tiktoken
+openai
+numpy

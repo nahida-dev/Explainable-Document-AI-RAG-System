@@ -1,0 +1,47 @@
+############################
+# Data & Documents
+############################
+# Ignore all PDFs (thesis, documents, datasets)
+data/*.pdf
+
+
+############################
+# ChromaDB / Vector Stores
+############################
+chroma_db/
+chromadb/
+
+############################
+# Python
+############################
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+.env
+
+############################
+# Environment & Secrets
+############################
+.env
+.env.*
+*.key
+*.secret
+*.token
+
+############################
+# FastAPI / Uvicorn
+############################
+*.log
+logs/
+
+############################
+# OS / Editor
+############################
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
