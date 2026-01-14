@@ -1,106 +1,76 @@
-# Data Directory
+# data/ Directory
 
+This directory is used to store **input documents** for the Explainable Document AI RAG System.
 
+## 📄 Supported Documents
 
-This directory is used to store \*\*input PDF documents\*\* for the Explainable Document RAG Assistant.
+- PDF documents (research papers, reports, manuals, books, etc.)
+- Example default file name:
+  - `document.pdf`
 
-
-
----
-
-
-
-## 📄 Supported Files
-
-
-
-- `document.pdf` (default)
-
-- Any other PDF specified via the `/ingest` API
-
-
-
-The system is designed to work with \*\*long, structured documents\*\*, such as:
-
-- Research papers
-
-- Theses and dissertations
-
-- Technical manuals
-
-- Policy or compliance documents
-
-- Whitepapers and reports
-
-
+> ⚠️ **PDF files are intentionally excluded from version control** via `.gitignore`.
+> Do NOT commit private, copyrighted, or sensitive documents to GitHub.
 
 ---
 
+## 📌 How This Folder Is Used
 
-
-## 📥 How to Add a Document
-
-
-
-1. Place your PDF file in this directory:
-
-data/document.pdf
-
-
-
-
-
-2. Ingest the document using the API:
+When you run the ingestion endpoint:
 
 ```bash
+POST /ingest
+```
 
-curl -X POST http://127.0.0.1:8000/ingest
+The system:
+1. Loads the PDF from this directory
+2. Performs **section-aware chunking**
+3. Builds:
+   - Semantic embeddings (ChromaDB)
+   - BM25 sparse index
+4. Enables explainable, citation-backed question answering
 
+---
 
+## 🧪 Example Workflow
 
-Or specify a custom path:
+1. Place your document here:
+   ```
+   data/document.pdf
+   ```
 
+2. Ingest the document:
+   ```bash
+   curl -X POST http://127.0.0.1:8000/ingest
+   ```
 
+3. Ask questions:
+   ```bash
+   curl -X POST http://127.0.0.1:8000/ask \
+     -H "Content-Type: application/json" \
+     -d '{"query":"Explain the core methodology"}'
+   ```
 
-curl -X POST http://127.0.0.1:8000/ingest \\
+---
 
-&nbsp; -H "Content-Type: application/json" \\
+## 🔐 Security & Privacy Notes
 
-&nbsp; -d '{"pdf\_path": "./data/your\_document.pdf"}'
+- PDFs are **ignored by Git**
+- This folder may contain:
+  - Proprietary documents
+  - Academic papers
+  - Internal technical documentation
+- Always verify permissions before sharing documents
 
+---
 
+## 🧠 Tip
 
+This system is **document-agnostic**:
+- Swap the PDF to use the system in **any domain**
+  - Healthcare
+  - Finance
+  - Legal
+  - Engineering
+  - Research
 
-
-⚠️ Important Notes
-
-Do not commit PDF files to the repository
-
-(they may be large, copyrighted, or private).
-
-
-
-The repository is document-agnostic and works with any suitable PDF.
-
-
-
-Only the structure and content of the document are used for retrieval and citation.
-
-
-
-🔐 Privacy \& Safety
-
-Documents are processed locally
-
-
-
-No data is uploaded or shared externally by default
-
-
-
-Suitable for private, academic, or enterprise use
-
-
-
-ℹ️ This folder intentionally contains no PDF files in the public repository.
-
+No code changes required 🚀
