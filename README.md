@@ -1,3 +1,11 @@
+![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-Production-green?logo=fastapi)
+![RAG](https://img.shields.io/badge/RAG-Hybrid%20Retrieval-blueviolet)
+![LLM](https://img.shields.io/badge/LLM-OpenAI%20Compatible-black?logo=openai)
+![VectorDB](https://img.shields.io/badge/VectorDB-ChromaDB-red)
+![Explainable AI](https://img.shields.io/badge/XAI-Explainable%20AI-important)
+![Production Ready](https://img.shields.io/badge/Status-Production--Style-success)
+
 
 # Explainable Document AI – RAG System
 
