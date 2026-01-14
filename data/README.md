@@ -1,4 +1,4 @@
-\# Data Directory
+# Data Directory
 
 
 
@@ -10,27 +10,27 @@ This directory is used to store \*\*input PDF documents\*\* for the Explainable 
 
 
 
-\## 📄 Supported Files
+## 📄 Supported Files
 
 
 
-\- `document.pdf` (default)
+- `document.pdf` (default)
 
-\- Any other PDF specified via the `/ingest` API
+- Any other PDF specified via the `/ingest` API
 
 
 
 The system is designed to work with \*\*long, structured documents\*\*, such as:
 
-\- Research papers
+- Research papers
 
-\- Theses and dissertations
+- Theses and dissertations
 
-\- Technical manuals
+- Technical manuals
 
-\- Policy or compliance documents
+- Policy or compliance documents
 
-\- Whitepapers and reports
+- Whitepapers and reports
 
 
 
@@ -38,11 +38,11 @@ The system is designed to work with \*\*long, structured documents\*\*, such as:
 
 
 
-\## 📥 How to Add a Document
+## 📥 How to Add a Document
 
 
 
-1\. Place your PDF file in this directory:
+1. Place your PDF file in this directory:
 
 data/document.pdf
 
@@ -50,7 +50,7 @@ data/document.pdf
 
 
 
-2\. Ingest the document using the API:
+2. Ingest the document using the API:
 
 ```bash
 
